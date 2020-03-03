@@ -8,16 +8,20 @@
 <body>
 
 	<main>
-	<section id="status">WELCOME!</section>
 	<div class="container">
+	<section id="status">WELCOME!</section>
+	<section id="display">Press Start to Begin</section
 	<section id="options">
-		<!-- <img src="res/icons/audioOn.png" id="audio" class="option" onclick="toggleAudio()" /> -->
 	</section>
+	<section id="slots">
 	<div id="slot1" class="a1"></div>
 	<div id="slot2" class="a1"></div>
 	<div id="slot3" class="a1"></div>
+	<section onclick="doSlot()" id="PlayButton">  Spin  </section>
+	<section onStart="doStart()" id="Start"> Start </section>
+	</section>
 	</div>
-	<section onclick="doSlot()" id="Play">Play to Spin</section>
+	
 </main>
 
 </body>
