@@ -3,5 +3,29 @@ body{
     background-repeat: repeat;
     background-size: 650px;
     background-position: top;
-	font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+p{
+    font-size: 60px;
+    color: rgb(15, 26, 36);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background-color: rgba(246, 248, 250, 0.692);
+   background-position: 20%;
+}
+a{
+    font-size: 30px;
+    font-style: auto;
+    color: rgb(21, 35, 48);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    text-decoration: none;
+    height: 20%;
+
+}
+audio
+{
+    display: none;
 }

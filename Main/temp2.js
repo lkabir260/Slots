@@ -5,18 +5,17 @@
 /*----- functions -----*/
 
 var doing = false;
-var spin = [new Audio("res/sounds/spin.mp3"),new Audio("res/sounds/spin.mp3"),new Audio("res/sounds/spin.mp3"),new Audio("res/sounds/spin.mp3"),new Audio("res/sounds/spin.mp3"),new Audio("res/sounds/spin.mp3"),new Audio("res/sounds/spin.mp3")];
-var coin = [new Audio("res/sounds/coin.mp3"),new Audio("res/sounds/coin.mp3"),new Audio("res/sounds/coin.mp3")]
-var win = new Audio("res/sounds/win.mp3");
-var lose = new Audio("res/sounds/lose.mp3");
-var audio = false;
 let status = document.getElementById("status")
 var info = true;
-
+//this function is for the slots
 function doSlot(){
+    //if true this is what happens 
 	if (doing){return null;}
-	doing = true;
-	var numChanges = randomInt(1,4)*7
+    doing = true;
+    
+    // variables  defined for each slot
+    //(min,max)*number
+    var numChanges = randomInt(1,4)*7
 	var numeberSlot1 = numChanges+randomInt(1,7)
 	var numeberSlot2 = numChanges+2*7+randomInt(1,7)
 	var numeberSlot3 = numChanges+4*7+randomInt(1,7)
@@ -24,22 +23,36 @@ function doSlot(){
 	var i1 = 0;
 	var i2 = 0;
 	var i3 = 0;
-	var sound = 0
-	status.innerHTML = "SPINNING"
+    var sound = 0
+    //status bar
+    //returns html content for status 
+    status.innerHTML = "SPINNING"
+    //evaluates function for speicifed intervals setInterval (function,seconds)
 	slot1 = setInterval(spin1, 50);
 	slot2 = setInterval(spin2, 50);
-	slot3 = setInterval(spin3, 50);
+    slot3 = setInterval(spin3, 50);
+    
+
+    //funtion for each spin
 	function spin1(){
-		i1++;
+        //increment by 1
+        i1++;
+        //greater than or equal too
 		if (i1>=numeberSlot1){
-			coin[0].play()
+            //coin[array].play() function plays for a certain period of time
+            coin[0].play()
+            //stops execution
 			clearInterval(slot1);
 			return null;
-		}
-		slotTile = document.getElementById("slot1");
+        }
+        //get element with slot1 ID
+        slotTile = document.getElementById("slot1");
+        //.className gets and sets class attribute for the class attribute (list of classes)
 		if (slotTile.className=="a6"){
 			slotTile.className = "a0";
-		}
+        }
+        //parseInt parses string and returns integer
+        // slotTile.className.substring(1)   - substring returns new string from indices of a string
 		slotTile.className = "a"+(parseInt(slotTile.className.substring(1))+1)
 	}
 	function spin2(){
@@ -67,27 +80,30 @@ function doSlot(){
 		if (slotTile.className=="a6"){
 			slotTile.className = "a0";
 		}
-		sound++;
-		if (sound==spin.length){
-			sound=0;
-		}
-		spin[sound].play();
+		// sound++;
+		// if (sound==spin.length){
+		// // 	sound=0;
+		// // }
+		// spin[sound].play();
 		slotTile.className = "a"+(parseInt(slotTile.className.substring(1))+1)
 	}
 }
 
+//win logic
 function testWin(){
+    //gets element from each slot
 	var slot1 = document.getElementById("slot1").className
 	var slot2 = document.getElementById("slot2").className
 	var slot3 = document.getElementById("slot3").className
+    //||or
 
 	if (((slot1 == slot2 && slot2 == slot3) ||
-		(slot1 == slot2 && slot3 == "a6") ||
-		(slot1 == slot3 && slot2 == "a6") ||
-		(slot2 == slot3 && slot1 == "a6") ||
-		(slot1 == slot2 && slot1 == "a6") ||
-		(slot1 == slot3 && slot1 == "a6") ||
-		(slot2 == slot3 && slot2 == "a6") ) && !(slot1 == slot2 && slot2 == slot3 && slot1=="a6")){
+		(slot1 == slot2) ||
+		(slot1 == slot3) ||
+		(slot2 == slot3) ||
+		(slot1 == slot2) ||
+		(slot1 == slot3) ||
+		(slot2 == slot3) ) && !(slot1 == slot2 && slot2 == slot3 && slot1=="a6")){
 		status.innerHTML = "YOU WIN!";
 		win.play();
 	}else{
@@ -97,30 +113,13 @@ function testWin(){
 	doing = false;
 }
 
-function toggleAudio(){
-	if (!audio){
-		audio = !audio;
-		for (var x of spin){
-			x.volume = 0.5;
-		}
-		for (var x of coin){
-			x.volume = 0.5;
-		}
-		win.volume = 1.0;
-		lose.volume = 1.0;
-	}else{
-		audio = !audio;
-		for (var x of spin){
-			x.volume = 0;
-		}
-		for (var x of coin){
-			x.volume = 0;
-		}
-		win.volume = 0;
-		lose.volume = 0;
-	}
-	document.getElementById("audio").src = "res/icons/audio"+(audio?"On":"Off")+".png";
-}
+(((slot1 == slot2 && slot2 == slot3) ||
+		(slot1 == slot2 && slot3 == "a6") ||
+		(slot1 == slot3 && slot2 == "a5") ||
+		(slot2 == slot3 && slot1 == "a4") ||
+		(slot1 == slot2 && slot1 == "a3") ||
+		(slot1 == slot3 && slot1 == "a2") ||
+		(slot2 == slot3 && slot2 == "a1") )
 
 function randomInt(min, max){
 	return Math.floor((Math.random() * (max-min+1)) + min);

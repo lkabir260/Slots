@@ -3,8 +3,8 @@
 
 .container{
 	position: absolute;
-  	left: 500px;
-  	top: 150px;
+  	left: auto;
+  	top: auto;
 }
 
 a{
@@ -14,11 +14,9 @@ a{
 h3{
 	margin-top: 12px;
 }
-*{
-	margin:0px;
-}
+
 body{
-    background-image: url("Main-Images/Voc&ecirc;\ teria\ assistido\ o\ programa\ caso\ se\ chamasse\ Insomnia\ Caf&eacute;_.jpeg");
+  background-image: url("Main-Images/Voc&ecirc;\ teria\ assistido\ o\ programa\ caso\ se\ chamasse\ Insomnia\ Caf&eacute;_.jpeg");
 	background-repeat: no-repeat;
 	background-image: -webkit-gradient(30%);
 	-webkit-background-size: cover;
@@ -45,23 +43,25 @@ main{
 }
 section#status{
 	margin-bottom: 25px;
+	border-radius: 5px;
 	padding-top: 25px;
 	padding-bottom: 25px;
-	border-radius: 5px;
 	text-align: center;
 	background-color: rgba(55, 71, 79, 0.404);
 	color: #FFFFFF;
 	font-size: 25px;
 	font-family: 'Roboto Mono', monospace;
 	  left: auto
-	  
 }
+	
+	 
 
 section#display{
 	margin-bottom: 25px;
 	padding-top: 25px;
 	padding-bottom: 25px;
 	border-radius: 5px;
+	bottom: 10%;
 	text-align: center;
 	background-color: rgba(55, 71, 79, 0.404);
 	color: #FFFFFF;
@@ -99,24 +99,9 @@ section#PlayButton{
 	font-size: 40px;
 	position: absolute;
 	bottom: 55%;
-	Left: 60%;
+	Left: 40%;
 }
 
-section#Start{
-	margin-top: 25px;
-	padding-top: 38px;
-	padding-bottom: 38px;
-	border-radius: 80px;
-	padding-left: 20px;
-	padding-right: 20px;
-	text-align: center;
-	background-color: rgb(71, 188, 87);
-	color: #FFFFFF;
-	font-size: 40px;
-	position: absolute;
-	bottom: 55%;
-	Left: 10%;
-}
 section#Gira:hover{
 	background-color: #BA68C8;
 }
