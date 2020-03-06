@@ -1,10 +1,20 @@
 body{
     background-image: url("Intro-Image/Quadro\ meu\ xuxu.jpeg");
       background-repeat: no-repeat;
+      background-image: -webkit-gradient(30%);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: auto;
       background-size: 40%;
-      width: 20%;
+      background-position: top;
+      font-family: 'Roboto', sans-serif;
+      background-color: rgb(78, 73, 73);
+      align-items: center;
+      vertical-align: flex;
   }
 
-  embed{
-      background-image: url("Intro-Image/Quadro\ meu\ xuxu.jpeg");
+  h1{
+
+    text-size-adjust: 100px;
+    text-align: center;
   }
