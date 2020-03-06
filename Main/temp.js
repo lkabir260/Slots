@@ -16,6 +16,12 @@ var y=x+50
 /*----- event listeners -----*/
 //not used
 /*----- functions -----*/
+function myFunction() {
+	alert("GAME HAS BEGUN");
+  }
+function doSlot() {
+	display("NEXT ROUND");
+  }
 function doSlot(){
 	if (doing){return null;}
     doing = true;

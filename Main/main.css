@@ -51,7 +51,35 @@ section#status{
 	color: #FFFFFF;
 	font-size: 25px;
 	font-family: 'Roboto Mono', monospace;
-	  left: auto
+	left: auto;
+}
+button{
+	margin-top: 25px;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	border-radius: 80px;
+	padding-left: 23px;
+	padding-right: 23px;
+	text-align: center;
+	background-color: rgb(71, 188, 100);
+	color: #FFFFFF;
+	font-size: 40px;
+	position: absolute;
+	bottom: 55%;
+	Left: 10%;
+}
+h2{
+	margin-bottom: 25px;
+	border-radius: 5px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	text-align: center;
+	background-color: rgba(55, 71, 79, 0.404);
+	color: #FFFFFF;
+	font-size: 25px;
+	font-family: 'Roboto Mono', monospace;
+	left: auto;
+	top: 40%;
 }
 	
 	 
@@ -82,24 +110,24 @@ section#slots{
 	height: 50px;
 	border-radius: 15px;
 	background-color: rgba(55, 71, 79, 0.404);;
-	height: 100vh;
+	height: 80vh;
 	
 }
 
 section#PlayButton{
 	margin-top: 25px;
-	padding-top: 38px;
-	padding-bottom: 38px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 	border-radius: 80px;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 35px;
+	padding-right: 35px;
 	text-align: center;
 	background-color: rgb(188, 71, 71);
 	color: #FFFFFF;
 	font-size: 40px;
 	position: absolute;
 	bottom: 55%;
-	Left: 40%;
+	Left: 60%;
 }
 
 section#Gira:hover{
